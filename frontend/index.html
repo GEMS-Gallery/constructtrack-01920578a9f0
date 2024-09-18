@@ -12,17 +12,8 @@
         <p>by Majid Mufti</p>
     </header>
     <main>
-        <section id="add-item">
-            <h2>Add New Item</h2>
-            <form id="add-item-form">
-                <input type="text" id="iid" placeholder="IID" required>
-                <input type="text" id="title" placeholder="Title" required>
-                <textarea id="description" placeholder="Description" required></textarea>
-                <input type="number" id="quantity" placeholder="Quantity" required>
-                <input type="text" id="unit" placeholder="Unit" required>
-                <input type="number" id="avgCost" placeholder="Average Cost" step="0.01" required>
-                <button type="submit">Add Item</button>
-            </form>
+        <section id="inventory-actions">
+            <button id="open-add-item-modal">Add New Item</button>
         </section>
         <section id="search">
             <h2>Search Inventory</h2>
@@ -34,6 +25,23 @@
             <ul id="items-list"></ul>
         </section>
     </main>
+
+    <div id="add-item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Item</h2>
+            <form id="add-item-form">
+                <input type="text" id="iid" placeholder="IID" required>
+                <input type="text" id="title" placeholder="Title" required>
+                <textarea id="description" placeholder="Description" required></textarea>
+                <input type="number" id="quantity" placeholder="Quantity" required>
+                <input type="text" id="unit" placeholder="Unit" required>
+                <input type="number" id="avgCost" placeholder="Average Cost" step="0.01" required>
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </div>
+
     <script type="module" src="index.js"></script>
 </body>
 </html>

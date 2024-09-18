@@ -5,6 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('search-input');
   const searchButton = document.getElementById('search-button');
   const itemsList = document.getElementById('items-list');
+  const modal = document.getElementById('add-item-modal');
+  const openModalBtn = document.getElementById('open-add-item-modal');
+  const closeModalSpan = document.getElementsByClassName('close')[0];
+
+  openModalBtn.onclick = () => {
+    modal.style.display = 'block';
+  }
+
+  closeModalSpan.onclick = () => {
+    modal.style.display = 'none';
+  }
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
 
   addItemForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -19,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await backend.addItem(iid, title, description, quantity, unit, avgCost);
       alert('Item added successfully!');
       addItemForm.reset();
+      modal.style.display = 'none';
       displayAllItems();
     } catch (error) {
       console.error('Error adding item:', error);
