@@ -1,0 +1,14 @@
+type InventoryItem = 
+ record {
+   avgCost: float64;
+   description: text;
+   iid: text;
+   quantity: nat;
+   title: text;
+   unit: text;
+ };
+service : {
+  addItem: (text, text, text, nat, text, float64) -> ();
+  getAllItems: () -> (vec InventoryItem) query;
+  searchItems: (text) -> (vec InventoryItem) query;
+}

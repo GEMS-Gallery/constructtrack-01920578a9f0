@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Supplies Inventory</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Building Supplies Inventory</h1>
+        <p>by Majid Mufti</p>
+    </header>
+    <main>
+        <section id="add-item">
+            <h2>Add New Item</h2>
+            <form id="add-item-form">
+                <input type="text" id="iid" placeholder="IID" required>
+                <input type="text" id="title" placeholder="Title" required>
+                <textarea id="description" placeholder="Description" required></textarea>
+                <input type="number" id="quantity" placeholder="Quantity" required>
+                <input type="text" id="unit" placeholder="Unit" required>
+                <input type="number" id="avgCost" placeholder="Average Cost" step="0.01" required>
+                <button type="submit">Add Item</button>
+            </form>
+        </section>
+        <section id="search">
+            <h2>Search Inventory</h2>
+            <input type="text" id="search-input" placeholder="Search items...">
+            <button id="search-button">Search</button>
+        </section>
+        <section id="inventory-list">
+            <h2>Inventory</h2>
+            <ul id="items-list"></ul>
+        </section>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
